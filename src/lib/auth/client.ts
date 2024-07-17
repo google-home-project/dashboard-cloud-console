@@ -11,9 +11,9 @@ function generateToken(): string {
 const user = {
   id: 'USR-000',
   avatar: '/assets/avatar.png',
-  firstName: 'Sofia',
-  lastName: 'Rivers',
-  email: 'sofia@devias.io',
+  firstName: 'Nguyen The',
+  lastName: 'Loc',
+  email: 'loc@gmail.com',
 } satisfies User;
 
 export interface SignUpParams {
@@ -39,7 +39,6 @@ export interface ResetPasswordParams {
 class AuthClient {
   async signUp(_: SignUpParams): Promise<{ error?: string }> {
     // Make API request
-
     // We do not handle the API, so we'll just generate a token and store it in localStorage.
     const token = generateToken();
     localStorage.setItem('custom-auth-token', token);
@@ -57,7 +56,7 @@ class AuthClient {
     // Make API request
 
     // We do not handle the API, so we'll check if the credentials match with the hardcoded ones.
-    if (email !== 'sofia@devias.io' || password !== 'Secret1') {
+    if (email !== 'loc@gmail.com' || password !== '123456') {
       return { error: 'Invalid credentials' };
     }
 
