@@ -20,8 +20,9 @@ export const HeaderDevices = () => {
   };
   return (
     <>
-      <ModalAddDeviceByForm open={openAddByForm} setOpen={setOpenAddByForm} />
       <ModalQrScan open={openQr} setOpen={setOpenQr} />
+      <ModalAddDeviceByForm open={openAddByForm} setOpen={setOpenAddByForm} />
+
       <HeaderButtonAction onHandleClick={onHandleClick} />
     </>
   );
