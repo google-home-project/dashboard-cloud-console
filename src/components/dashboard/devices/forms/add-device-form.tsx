@@ -16,7 +16,16 @@ export const AddDeviceForm = ({ formRefCreateDevice, onCloseModal, initialValue 
     form.resetFields();
     onCloseModal();
   };
-  console.log(initialValue);
+  //   console.log(initialValue);
+  const onSubmit = (value: any) => {
+    const newDevice = {
+      name: value.name,
+      triggerAsyncId: value.trigger_type,
+      location: value.location,
+      type_device: value.type_device,
+      active: value.active,
+    };
+  };
   return (
     <Form
       layout="vertical"

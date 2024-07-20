@@ -15,21 +15,21 @@ const scannerStyles: IScannerStyles = {
     position: 'relative',
     width: '60%',
     height: 'auto',
-    // backgroundColor: '#000',
   },
 
   finderBorder: 2, // assuming finderBorder is used as a style property inside Scanner
 };
 export const ModalQrScan = ({ open, setOpen }: ModalScanQrProps) => {
-  const [openScanner, setOpenScanner] = useState<boolean>(false);
+  const [pauseScanner, setPauseScanner] = useState<boolean>(false);
   const [hasResult, setHasResult] = useState<boolean>(false);
   const [resultScan, setResultScan] = useState<any>(null);
   // console.log(openScanner, open);
   const onHandleScanQR = (result: IDetectedBarcode[]) => {
     if (result !== null) {
-      // console.log();
       setResultScan(JSON.parse(result[0].rawValue));
       setHasResult(true);
+      // setPauseScanner(true);
+      // setOpen(false);
     }
   };
   return (
@@ -46,7 +46,7 @@ export const ModalQrScan = ({ open, setOpen }: ModalScanQrProps) => {
         <div className="w-full flex items-center justify-center">
           <Scanner
             allowMultiple={true}
-            paused={openScanner}
+            paused={pauseScanner}
             styles={scannerStyles}
             onScan={(result: IDetectedBarcode[]) => onHandleScanQR(result)}
           />
