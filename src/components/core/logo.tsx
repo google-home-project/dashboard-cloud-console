@@ -27,7 +27,7 @@ export function Logo({ color = 'dark', emblem, height = HEIGHT, width = WIDTH }:
     url = color === 'light' ? '/assets/logo.svg' : '/assets/logo--dark.svg';
   }
 
-  return <Box alt="logo" component="img" height={height} src={url} width={width} />;
+  return <div className="lg:text-[24px] text-[16px] font-[500]">Smart Home</div>;
 }
 
 export interface DynamicLogoProps {
